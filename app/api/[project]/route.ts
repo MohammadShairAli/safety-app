@@ -13,7 +13,7 @@ export async function GET(
   const { project } = await context.params;
   const isApproved = approvedProjects.has(project.toLowerCase());
 
-  return Response.json(false, { headers: corsHeaders });
+  return Response.json(isApproved, { headers: corsHeaders });
 }
 
 export async function OPTIONS() {
